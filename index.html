@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Wanessa Brito</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/style.css">
+
+    <!-- Link Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 
+    Aluno: Wanessa Brito Ramalho
+    RU: 4916022 
+    -->
+
+    <!-- Loader -->
+    <!-- Carregador com texto exibido enquanto algo está sendo processado -->
+    <div id="loader" class="loader">
+        <p>Carregando...</p>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+    <!-- Cabeçalho com nome e link para a tela inicial, incluindo um ícon -->
+        <span>Wanessa Brito
+            <a href="#Tela-inicial" class="text" aria-label="Voltar para a tela inicial">
+                <img src="src/assets/icons/icons8-cinnamoroll-64.png" alt="Cinnamoroll">
+            </a>
+        </span>
+
+        <!-- Ícone do menu com classe para estilo e acessibilidade através do atributo aria-label -->
+        <i class="bx bx-menu" id="menu-icon" aria-label="Abrir menu"></i>
+
+        <!-- Navegação com links para diferentes seções da página -->
+        <nav class="navb" role="navigation">
+            <a href="#Tela-inicial">Tela Inicial</a>
+            <a href="#sobre-min">Sobre Mim</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#educacao">Formação</a>
+            <a href="#contatos">Contatos</a>
+        </nav>
+
+        <!-- Link para o GitHub com um ícone representativo -->
+        <a href="https://github.com/wanessabrito">
+            <img src="src/assets/icons/icons8-github-64.png" alt="github">
+        </a>
+    </header>
+
+    <!-- Botão de voltar ao topo -->
+    <a href="#Tela-inicial">Tela Inicial</a>
+
+    <!-- Seção Inicial -->
+    <div id="Tela-inicial" class="profile">
+        <!-- Contêiner para a imagem de perfil -->
+        <div class="profile-picture">
+            <img src="src/assets/foto.perfil.jpg" alt="Foto do Perfil">
+        </div>
+        <!-- Informações sobre o perfil: nome e profissão -->
+        <div class="profile-info">
+            <h2>Wanessa Brito Ramalho</h2>
+            <h3>Desenvolvedora Web</h3>
+        </div>
+    </div>
+
+    <!-- Contêiner para uma onda SVG decorativa, usada como transição de seções -->
+    <div class="wave-container">
+        <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+            <path 
+                fill="#ffffff" 
+                fill-opacity="1" 
+                d="M0,160L60,176C120,192,240,224,360,240C480,256,600,256,720,224C840,192,960,128,1080,112C1200,96,1320,128,1380,144L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+            </path>
+        </svg>
+    </div>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre-min" class="section">
+        <!-- Título da seção -->
+        <h2>Sobre Mim</h2>
+
+         <!-- Caixa de texto com uma breve descrição -->
+        <div class="sobre-mim-box">
+            <p>Sou estudante de Análise e Desenvolvimento de Sistemas (ADS) pela Uninter, com grande interesse em aprender e aplicar conhecimentos em desenvolvimento de software. Tenho me aprofundado em linguagens de programação, design de interfaces e bancos de dados, buscando sempre aprimorar minhas habilidades e adquirir experiência prática.</p>
+        </div>
+
+         <!-- Título para a seção de habilidades  -->
+        <h3 id="h3">Skills</h3>
+
+        <!-- Contêiner para as habilidades -->
+        <div class="skills">
+
+            <!-- Habilidades com ícones -->
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-html-5-64.png" alt="html">
+                <p>HTML</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-css3-64.png" alt="Css">
+                <p>CSS</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-javascript-64.png" alt="JavaScript">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-php-logo-64.png" alt="PHP">
+                <p>PHP</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-python-64.png" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-figma-64.png" alt="Figma">
+                <p>Figma</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-mysql-64.png" alt="Mysql">
+                <p>MySQL</p>
+            </div>
+            <div class="skill-item">
+                <img src="src/assets/icons/icons8-database-64.png" alt="Workbench">
+                <p>Workbench</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="section">
+        <!-- Título da seção -->
+        <h2>Projetos</h2>
+
+        <!-- Contêiner para os projetos -->
+        <div class="projetos-box">
+            <div class="projeto-item">
+                <img src="src/assets/fotos.projetos/foto.projeto1.png" 
+                alt="Projeto 1">
+                <!-- Projeto 1 -->
+                <div class="projeto-info">
+                    <h3>Jogo da memória</h3>
+                    <p>Um jogo simples que estimula a concentração e a memória ao combinar pares de cartas, com diferentes temas para personalização.</p>
+                    <a href="https://github.com/wanessabrito/Memory_Gamer" target="_blank">Ver mais</a>
+                </div>
+            </div>
+            <!-- Projeto 2 -->
+            <div class="projeto-item">
+                <img src="src/assets/fotos.projetos/foto.projeto2.png" alt="Projeto 2">
+                <div class="projeto-info">
+                    <h3>Jogo Detona Ralph</h3>
+                    <p>Um jogo onde Ralph se movimenta entre blocos, e o jogador deve clicar nele o máximo de vezes possível antes que o tempo termine.</p>
+                    <a href="https://github.com/wanessabrito/Detona-Ralph-Gamer" target="_blank">Ver mais</a>
+                </div>
+            </div>
+            <!-- Projeto 3 -->
+            <div class="projeto-item">
+                <img src="src/assets/fotos.projetos/foto.projeto3.png" alt="Projeto 3">
+                <div class="projeto-info">
+                    <h3>Piano Web</h3>
+                    <p>Simulador de um piano virtual, permitindo que os usuários toquem melodias diretamente no navegador.</p>
+                    <a href="https://github.com/wanessabrito/Piano.js" target="_blank">Ver mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Formação -->
+    <section id="educacao" class="section">
+        <!-- Título da seção -->
+        <h2>Formação</h2>
+        <div class="formacao-box">
+            <!-- Curso de Graduação -->
+            <div class="formacao-item">
+                <!-- Logo da instituição com link -->
+                <div class="formacao-icone">
+                    <a href="https://www.uninter.com/">
+                        <img src="src/assets/icons/uninter-logo-0.png" alt="Logo Uninter">
+                    </a>
+                </div>
+                 <!-- Informações sobre o curso -->
+                <div class="formacao-info">
+                    <h3>Análise e Desenvolvimento de Sistemas</h3>
+                    <p><strong>Instituição:</strong> Centro Universitário Internacional - Uninter</p>
+                    <p><strong>Previsão de Conclusão:</strong> Novembro de 2026</p>
+                    <p>Este curso desenvolve competências em programação, arquitetura de sistemas, banco de dados e design de interfaces. Com foco na prática, os alunos participam de projetos que preparam para os desafios do mercado de tecnologia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Contatos -->
+    <div class="footer">
+        <section id="contatos" class="section">
+            <!-- Título da seção -->
+            <h2>Contatos</h2>
+
+             <!-- Contêiner para informações de contato -->
+            <div class="contatos-box">
+                <div class="contato-item">
+                    <img src="src/assets/icons/icons8-gmail-logo-64 (1).png" alt="email">
+                    <p>Email:</p>
+                    <a href="mailto:wanessabritoramalho@gmail.com">wanessabritoramalho@gmail.com</a>
+                </div>
+                <div class="contato-item">
+                    <img src="src/assets/icons/icons8-linkedin-64.png" alt="linkedin">
+                    <p>LinkedIn:</p>
+                    <a href="https://www.linkedin.com/in/wanessa-brito-b446b2306" target="_blank">www.linkedin.com/in/wanessa-brito-b446b2306</a>
+                </div>
+                <div class="contato-item">
+                    <img src="src/assets/icons/icons8-github-64.png" alt="GitHub">
+                    <p>GitHub:</p>
+                    <a href="https://github.com/wanessabrito" target="_blank">github.com/wanessabrito</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<!-- Scripts -->
+<!-- Inclusão do arquivo JavaScript 'engine.js' que contém funcionalidades para o site -->
+    <script src="src/scripts/engine.js"></script>
+</body>
+</html>

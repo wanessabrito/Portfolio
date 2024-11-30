@@ -1,0 +1,772 @@
+/*  
+    Aluno: Wanessa Brito Ramalho
+    RU: 4916022 
+    */
+
+/* Reset básico - Remove margens, espaçamentos e define o box-sizing de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que a largura e altura incluam padding e border */
+}
+
+/* Definições para o html: tamanho da fonte é ajustado para facilitar unidades em rem e configuração de rolagem suave */
+html {
+    font-size: 62.5%; /* 1rem = 10px, facilita a definição de tamanhos em rem */
+    scroll-behavior: smooth; /* Permite rolagem suave */
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+/* Corpo da página - define a fonte padrão e configura a tela com um fundo gradiente */
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte padrão */
+    background: linear-gradient(to bottom, #77B7ED 0%, #B4AAEB 100%); /* Fundo com gradiente suave */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+}
+
+/* Estilo do Loader - elemento de carregamento enquanto a página é carregada */
+.loader {
+    position: fixed; /* Fixa o loader no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background: #ffffff; /* Fundo branco */
+    display: flex; /* Flexbox para centralizar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 2000; /* Coloca o loader sobre todos os outros elementos */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #555; /* Cor do texto do loader */
+}
+
+/* Header - menu superior com navegação e ícone */
+.header {
+    position: fixed; /* Fixa o header no topo */
+    width: 100%; /* Ocupa toda a largura da tela */
+    top: 0;
+    left: 0;
+    padding: 2rem 10%; /* Espaçamento interno do header */
+    display: flex; /* Flexbox para disposição dos itens */
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Alinha os itens verticalmente */
+    z-index: 1000; /* Coloca o header acima de outros elementos */
+    background-color: rgba(180, 213, 241, 0.9); /* Cor de fundo com transparência */
+    backdrop-filter: blur(10px); /* Aplica um desfoque no fundo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo do texto em "span" com gradiente */
+span {
+    background: linear-gradient(
+        270deg,
+        #e098da 10%, /* Cor do gradiente */
+        #ad43bb 100%
+    );
+    background-clip: text; /* Aplica o gradiente ao texto */
+    color: transparent; /* Torna o texto transparente para visibilidade do gradiente */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Estilo para o ícone do menu que aparece em telas pequenas */
+#menu-icon {
+    font-size: 3.5rem;
+    color: #333;
+    display: none; /* Inicialmente não aparece */
+    cursor: pointer; /* Aponta que é interativo */
+}
+
+/* Navegação principal */
+.navb {
+    display: flex;
+    gap: 2rem; /* Espaçamento entre os itens do menu */
+}
+
+/* Estilo para os links do menu de navegação */
+.navb a {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-left: 4rem; /* Espaçamento à esquerda */
+    font-weight: 500; /* Peso da fonte */
+    transition: 0.3s ease-in-out; /* Transição suave ao passar o mouse */
+    border-bottom: 3px solid transparent; /* Inicialmente sem borda */
+}
+
+/* Efeito de hover nos links de navegação */
+.navb a:hover {
+    color: #e9a2d7; /* Cor ao passar o mouse */
+    border-bottom: 3px solid #e9a2d7; /* Borda aparece ao passar o mouse */
+}
+
+/* Classe para tornar o menu visível em dispositivos móveis */
+.active {
+    display: block;
+}
+
+/* Estilo para o logo ou imagem no header */
+header img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Seção de Perfil */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Espaçamento entre os elementos */
+    flex-wrap: wrap; /* Permite que os elementos se ajustem à tela */
+    margin: 10rem auto; /* Espaçamento superior e inferior */
+    text-align: center; /* Centraliza o texto */
+    padding: 2rem; /* Espaçamento interno */
+}
+
+/* Imagem de perfil com borda arredondada */
+.profile-picture {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%; /* Deixa a imagem circular */
+    overflow: hidden; /* Esconde a parte da imagem que sai do círculo */
+    border: 5px solid transparent; /* Borda sem cor */
+    background: linear-gradient(to bottom, #5ea7eb, #ec7dd0); /* Gradiente de fundo */
+    box-shadow: 0 0 30px 15px rgba(34, 64, 235, 0.6); /* Sombra suave */
+}
+
+/* A imagem dentro do container de perfil é ajustada */
+.profile-picture img {
+    width: 100%; /* Preenche 100% do espaço do container */
+    height: 100%; /* Preenche 100% do espaço do container */
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem deformar */
+}
+
+/* Informações do perfil, como nome e descrição */
+.profile-info h2 {
+    font-size: 4rem;
+    background: linear-gradient(
+        270deg,
+        #9166f5 10%, /* Gradiente da cor do texto */
+        #990073 100%
+    );
+    background-clip: text; /* Aplica o gradiente ao texto */
+    color: transparent; /* Torna o texto transparente para visibilidade do gradiente */
+}
+
+/* Subtítulo do perfil */
+.profile-info h3 {
+    font-size: 2.5rem;
+    color: #fbeeff;
+}
+
+/* Parágrafo de descrição do perfil */
+.profile-info p {
+    font-size: 1.6rem;
+    color: #5c5b5b;
+    margin-top: 1rem;
+}
+
+/* Botão de "Voltar ao topo", que aparece na tela quando o usuário rola para baixo */
+#back-to-top {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #e9a2d7; /* Cor de fundo */
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%; /* Forma circular */
+    display: none; /* Inicialmente não aparece */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+#back-to-top:hover {
+    background-color: #d17bc0; /* Cor do botão quando hover */
+}
+
+/* Estilo das seções gerais (Sobre, Projetos, etc.) */
+.section {
+    padding: 4rem 10%; /* Espaçamento interno */
+    margin-top: 6rem; /* Espaçamento superior */
+    text-align: center; /* Centraliza o texto */
+    background-color: #f0f4ff; /* Cor de fundo */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título das seções */
+.section h2 {
+    font-size: 3rem;
+    color: #333; /* Cor do título */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+}
+
+/* Parágrafo das seções */
+.section p {
+    font-size: 1.6rem;
+    color: #555;
+    line-height: 1.8; /* Espaçamento entre as linhas */
+}
+
+/* Lista sem estilo, personalizada com links */
+ul {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+    font-size: 1.6rem; /* Tamanho de fonte */
+}
+
+ul li {
+    margin-bottom: 1.5rem; /* Espaçamento entre os itens da lista */
+}
+
+ul li a {
+    color: #007bff; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Efeito de hover nos links da lista */
+ul li a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+/* Container de onda para efeito visual */
+.wave-container {
+    position: relative;
+    width: 100%; /* Faz a onda se ajustar à largura da página */
+    overflow: hidden; /* Impede o excesso de conteúdo visível */
+    line-height: 0;
+    margin-top: -250px; /* Remove espaços extras ao redor */
+}
+
+.wave-container svg {
+    display: block;
+    width: 100%; /* O SVG ocupa toda a largura da tela */
+    height: auto;
+    margin-top: -1px; /* Conecta a onda perfeitamente à seção */
+}
+
+/* Definição da animação da onda */
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* A onda se move da direita para a esquerda */
+    }
+}
+
+
+/* Seção Sobre Mim */
+#sobre-min {
+    background: linear-gradient(to bottom, #ffffff, #f7f8fa); /* Gradiente de fundo suave */
+    padding: 6rem 10%; /* Padding generoso para espaçamento interno */
+    text-align: center; /* Alinha o texto ao centro */
+    border-radius: 10px; /* Bordas arredondadas para o container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve para dar um efeito de profundidade */
+    margin-top: 0.5rem; /* Configuração de margem superior */
+    display: flex; /* Flexbox para alinhamento interno */
+    flex-direction: column; /* Organiza os itens na coluna */
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+}
+
+/* Título "Sobre Mim" */
+#sobre-min h2 {
+    font-size: 3.5rem; /* Define o tamanho da fonte do título */
+    font-weight: 700; /* Define a espessura da fonte */
+    color: #4a4a4a; /* Cor do texto */
+    margin-bottom: 2rem; /* Espaçamento inferior */
+    position: relative; /* Para aplicar pseudo-elementos como ::after */
+}
+
+/* Barra abaixo do título */
+#sobre-min h2::after {
+    content: ""; /* Cria um conteúdo vazio para o pseudo-elemento */
+    display: block; /* Exibe como um bloco */
+    width: 80px; /* Largura da linha abaixo do título */
+    height: 4px; /* Espessura da linha */
+    background: #e9a2d7; /* Cor da linha */
+    margin: 1rem auto 0; /* Centraliza a linha com espaçamento */
+    border-radius: 2px; /* Bordas arredondadas */
+}
+
+/* Texto "Sobre Mim" dentro de uma caixa */
+#sobre-min .sobre-mim-box {
+    background-color: #fff; /* Cor de fundo da caixa */
+    border: 2px solid #e9a2d7; /* Borda com cor similar à linha do título */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 2rem; /* Espaçamento interno da caixa */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve para profundidade */
+    margin-top: 2rem; /* Espaçamento superior */
+    max-width: 1000px; /* Largura máxima para responsividade */
+    width: 100%; /* Largura total disponível */
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+/* Seção de habilidades (Skills) */
+#sobre-min .skills {
+    margin-top: 1rem; /* Espaçamento superior */
+    display: flex; /* Flexbox para layout de itens */
+    justify-content: center; /* Centraliza os itens */
+    gap: 3rem; /* Espaçamento entre os itens */
+    flex-wrap: wrap; /* Permite quebra de linha quando necessário */
+}
+
+/* Título da seção Skills */
+#sobre-min .skills h3 {
+    font-size: 3.5rem; /* Tamanho grande para o título da seção */
+    font-weight: 700; /* Espessura da fonte */
+    color: #4a4a4a; /* Cor do texto */
+    margin-bottom: 3rem; /* Espaçamento inferior */
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estilo dos itens de skill */
+#sobre-min .skill-item {
+    background: #fff; /* Cor de fundo branca */
+    border: 2px solid #e9a2d7; /* Borda com cor personalizada */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 2rem; /* Espaçamento interno */
+    text-align: center; /* Alinha o conteúdo ao centro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    width: 120px; /* Largura fixada */
+    height: 120px; /* Altura fixada */
+    display: flex; /* Flexbox para disposição interna */
+    flex-direction: column; /* Organiza os elementos na coluna */
+    align-items: center; /* Alinha ao centro */
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+/* Efeito de hover nos itens de skill */
+#sobre-min .skill-item:hover {
+    transform: translateY(-5px); /* Levanta o item ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar destaque */
+}
+
+/* Estilo do ícone dentro de cada skill */
+#sobre-min .skill-item i {
+    font-size: 4rem; /* Aumenta o tamanho do ícone */
+    color: #e9a2d7; /* Cor personalizada para o ícone */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+/* Estilo do texto descritivo dentro de cada skill */
+#sobre-min .skill-item p {
+    font-size: 1.4rem; /* Tamanho da fonte para o texto */
+    color: #333; /* Cor do texto */
+    font-weight: 600; /* Espessura do texto */
+}
+
+/* Estilo do ícone específico do MySQL */
+#sobre-min .skill-item.mysql i {
+    color: #00758f; /* Cor do ícone para MySQL */
+}
+
+/* Título adicional na seção */
+#h3 {
+    font-size: 3rem; /* Tamanho aumentado para o título */
+    font-weight: 700; /* Peso da fonte */
+    color: #4a4a4a; /* Cor do texto */
+    margin-bottom: 3rem; /* Espaçamento inferior */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 2rem; /* Espaçamento superior */
+}
+
+/* Barra abaixo do título #h3 */
+#sobre-min #h3::after {
+    content: ""; /* Cria um conteúdo vazio para o pseudo-elemento */
+    display: block; /* Exibe como um bloco */
+    width: 50px; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background: #e9a2d7; /* Cor da linha */
+    margin: 1rem auto 0; /* Centraliza a linha */
+    border-radius: 2px; /* Bordas arredondadas */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+
+    #sobre-min h2 {
+        font-size: 3rem; /* Diminui o tamanho da fonte em telas menores */
+    }
+
+    #sobre-min p {
+        font-size: 1.6rem; /* Ajusta o tamanho da fonte do parágrafo */
+    }
+
+    /* Ajustes na estrutura do layout em telas menores */
+    #sobre-min .sobre-mim-box {
+        flex-direction: column; /* Organiza os itens em coluna */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Ajustes na seção de skills em telas menores */
+    #sobre-min .skills {
+        flex-direction: column; /* Alinha as skills verticalmente */
+        gap: 1.5rem; /* Reduz o espaçamento entre as skills */
+    }
+
+    /* Ajustes no item de skill em telas menores */
+    #sobre-min .skill-item {
+        width: 100%; /* Faz os itens ocuparem toda a largura disponível */
+        height: auto; /* Ajusta a altura conforme necessário */
+    }
+
+    /* Aumento do tamanho dos ícones para facilitar a visualização */
+    #sobre-min .skill-item i {
+        font-size: 5rem; /* Aumenta o tamanho dos ícones na versão móvel */
+    }
+}
+
+
+/* Seção de Projetos */
+#projetos {
+    background: linear-gradient(to bottom, #ffffff, #ffffff); /* Definindo um fundo branco para a seção */
+    padding: 6rem 10%; /* Adiciona padding ao redor da seção para espaçamento */
+    text-align: center; /* Alinha o conteúdo no centro */
+    border-radius: 10px; /* Arredonda as bordas da seção */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave para dar profundidade */
+    margin-top: 0.5rem; /* Pequeno espaçamento superior */
+}
+
+/* Estilo do título da seção de Projetos */
+#projetos h2 {
+    font-size: 3.5rem; /* Tamanho grande para o título */
+    font-weight: 700; /* Título em negrito */
+    color: #4a4a4a; /* Cor do texto do título */
+    margin-bottom: 3rem; /* Espaçamento abaixo do título */
+}
+
+/* Container para os projetos */
+.projetos-box {
+    display: flex; /* Usa o Flexbox para organizar os itens */
+    justify-content: space-between; /* Distribui os itens igualmente com espaçamento */
+    gap: 2rem; /* Espaçamento entre os projetos */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+    margin-top: 2rem; /* Espaçamento superior */
+}
+
+/* Estilo de cada item de projeto */
+.projeto-item {
+    background: #fff; /* Fundo branco para cada item de projeto */
+    border-radius: 10px; /* Arredonda as bordas dos itens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+    width: 30%; /* Define a largura de cada item como 30% do container pai */
+    overflow: hidden; /* Garante que o conteúdo que ultrapasse o limite do item seja escondido */
+    position: relative; /* Permite o posicionamento dos elementos internos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para transformações e sombras */
+}
+
+/* Efeito de hover no item de projeto */
+.projeto-item:hover {
+    transform: translateY(-5px); /* Levanta o item ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar destaque */
+}
+
+/* Estilo da imagem dentro de cada projeto */
+.projeto-item img {
+    width: 100%; /* A imagem ocupa toda a largura do item */
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço sem deformação */
+}
+
+/* Estilo das informações de cada projeto */
+.projeto-info {
+    padding: 1.5rem; /* Adiciona padding para separar o texto das bordas */
+    text-align: left; /* Alinha o texto à esquerda dentro do item */
+}
+
+/* Estilo do título dentro de cada projeto */
+.projeto-info h3 {
+    font-size: 2rem; /* Tamanho da fonte do título do projeto */
+    font-weight: 600; /* Peso da fonte */
+    color: #333; /* Cor do título */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+/* Estilo do parágrafo dentro de cada projeto */
+.projeto-info p {
+    font-size: 1.4rem; /* Tamanho da fonte para a descrição */
+    color: #555; /* Cor da descrição */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+/* Estilo do link dentro de cada projeto */
+.projeto-info a {
+    display: inline-block; /* O link se comporta como um bloco para facilitar o clique */
+    background-color: #e9a2d7; /* Cor de fundo personalizada para o link */
+    padding: 1rem 2rem; /* Espaçamento interno do link */
+    color: #fff; /* Cor do texto do link */
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 1.4rem; /* Tamanho da fonte do link */
+    transition: background-color 0.3s; /* Transição suave para a mudança de cor do fundo */
+}
+
+/* Efeito de hover no link */
+.projeto-info a:hover {
+    background-color: #d18cb6; /* Cor de fundo do link ao passar o mouse */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+
+    /* Ajuste no título da seção de projetos */
+    #projetos h2 {
+        font-size: 3rem; /* Diminui o tamanho do título em telas pequenas */
+    }
+
+    /* Ajuste no layout dos projetos em telas menores */
+    .projetos-box {
+        flex-direction: column; /* Organiza os projetos verticalmente em vez de horizontalmente */
+        gap: 2rem; /* Espaçamento entre os projetos */
+    }
+
+    /* Ajuste na largura dos itens de projeto em telas menores */
+    .projeto-item {
+        width: 100%; /* Faz com que cada item ocupe 100% da largura */
+    }
+}
+
+/* Barra abaixo do título da seção de Projetos */
+#projetos h2::after {
+    content: ""; /* Cria um conteúdo vazio para o pseudo-elemento */
+    display: block; /* Exibe como um bloco */
+    width: 50px; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background: #e9a2d7; /* Cor da linha */
+    margin: 1rem auto 0; /* Centraliza a linha */
+    border-radius: 2px; /* Bordas arredondadas para a linha */
+}
+
+
+/* Seção Formação */
+#educacao {
+    background: linear-gradient(to bottom, #ffffff, #ffffff); /* Fundo branco com gradiente suave */
+    padding: 6rem 10%; /* Padding grande ao redor da seção para espaçamento */
+    text-align: center; /* Centraliza o conteúdo da seção */
+    border-radius: 10px; /* Arredonda as bordas da seção */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve para dar profundidade */
+    margin-top: 0.5rem; /* Espaçamento superior para separar da seção anterior */
+}
+
+/* Estilo do título da seção de Formação */
+#educacao h2 {
+    font-size: 3.5rem; /* Tamanho grande para o título */
+    font-weight: 700; /* Deixa o título em negrito */
+    color: #4a4a4a; /* Cor do título */
+    margin-bottom: 3rem; /* Espaçamento abaixo do título */
+    position: relative; /* Permite posicionar o pseudo-elemento abaixo do título */
+}
+
+/* Adicionando uma linha decorativa abaixo do título */
+#educacao h2::after {
+    content: ""; /* Cria um pseudo-elemento vazio */
+    display: block; /* Exibe o pseudo-elemento como bloco */
+    width: 60px; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background: #e9a2d7; /* Cor da linha */
+    margin: 1rem auto 0; /* Centraliza a linha e adiciona margem acima */
+    border-radius: 2px; /* Bordas arredondadas para a linha */
+}
+
+/* Caixa de Formação */
+.formacao-box {
+    display: flex; /* Utiliza o Flexbox para distribuir os itens */
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 2rem; /* Espaçamento entre os itens da coluna */
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+}
+
+/* Estilo de cada item de formação */
+.formacao-item {
+    background: #fff; /* Fundo branco para cada item de formação */
+    border: 2px solid #e9a2d7; /* Borda com a cor personalizada */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 2rem; /* Padding interno para espaçamento */
+    display: flex; /* Flexbox para organizar o conteúdo do item */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    gap: 2rem; /* Espaçamento entre os elementos dentro do item */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+    max-width: 800px; /* Largura máxima para o item */
+    text-align: left; /* Alinha o texto à esquerda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito de hover nos itens de formação */
+.formacao-item:hover {
+    transform: translateY(-5px); /* Move o item para cima quando o mouse passa sobre ele */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar destaque */
+}
+
+/* Estilo para os ícones e logos dentro de cada item de formação */
+.formacao-icone img {
+    width: 80px; /* Define a largura da imagem */
+    height: auto; /* Ajusta a altura automaticamente */
+    border: 2px solid #e96dca; /* Borda personalizada */
+    border-radius: 8px; /* Arredonda as bordas da imagem */
+    text-align: center; /* Centraliza a imagem */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o hover */
+    display: flex; /* Flexbox para centralizar a imagem */
+    flex-direction: column; /* Organiza os itens internamente em coluna */
+    align-items: center; /* Alinha os itens no centro */
+    justify-content: center; /* Garante que a imagem esteja centralizada */
+}
+
+/* Estilo das informações dentro de cada item de formação */
+.formacao-info h3 {
+    font-size: 2rem; /* Tamanho do título dentro do item */
+    font-weight: 600; /* Peso da fonte para o título */
+    color: #333; /* Cor do título */
+    margin-bottom: 1rem; /* Espaçamento inferior */
+}
+
+/* Estilo para o parágrafo dentro de cada item de formação */
+.formacao-info p {
+    font-size: 1.6rem; /* Tamanho da fonte do parágrafo */
+    color: #555; /* Cor do texto */
+    margin: 0.5rem 0; /* Espaçamento superior e inferior */
+    line-height: 1.8; /* Aumenta o espaçamento entre as linhas */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+
+    /* Ajusta o padding da seção em telas menores */
+    #educacao {
+        padding: 4rem 5%; /* Reduz o padding */
+    }
+
+    /* Ajusta o tamanho do título para telas pequenas */
+    #educacao h2 {
+        font-size: 3rem; /* Tamanho menor para o título */
+    }
+
+    /* Ajusta o layout dos itens de formação em telas pequenas */
+    .formacao-item {
+        flex-direction: column; /* Organiza os itens em coluna */
+        align-items: center; /* Alinha os itens no centro */
+        text-align: center; /* Alinha o texto no centro */
+    }
+
+    /* Ajusta a imagem dos ícones em telas pequenas */
+    .formacao-icone img {
+        margin: 0 auto 1rem; /* Centraliza a imagem e adiciona espaço abaixo */
+    }
+}
+
+/* Seção Contatos */
+#contatos {
+    background: linear-gradient(to bottom, #ffffff, #ffffff); /* Fundo branco com gradiente suave */
+    padding: 6rem 10%; /* Padding grande ao redor da seção para espaçamento */
+    text-align: center; /* Centraliza o conteúdo da seção */
+    border-radius: 10px; /* Bordas arredondadas para a seção */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+    margin-top: 0.5rem; /* Espaçamento superior para separar da seção anterior */
+}
+
+/* Estilo do título da seção de Contatos */
+#contatos h2 {
+    font-size: 3.5rem; /* Tamanho grande para o título */
+    font-weight: 700; /* Deixa o título em negrito */
+    color: #4a4a4a; /* Cor do título */
+    margin-bottom: 3rem; /* Espaçamento abaixo do título */
+    position: relative; /* Permite posicionar o pseudo-elemento abaixo do título */
+}
+
+/* Adicionando uma linha decorativa abaixo do título */
+#contatos h2::after {
+    content: ""; /* Cria um pseudo-elemento vazio */
+    display: block; /* Exibe o pseudo-elemento como bloco */
+    width: 60px; /* Largura da linha */
+    height: 4px; /* Espessura da linha */
+    background: #e9a2d7; /* Cor da linha */
+    margin: 1rem auto 0; /* Centraliza a linha e adiciona margem acima */
+    border-radius: 2px; /* Bordas arredondadas para a linha */
+}
+
+/* Caixa de Contatos */
+.contatos-box {
+    display: flex; /* Utiliza o Flexbox para distribuir os itens */
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    gap: 2rem; /* Espaçamento entre os itens da coluna */
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+}
+
+/* Estilo de cada item de contato */
+.contato-item {
+    display: flex; /* Flexbox para organizar os elementos dentro do item */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    gap: 1rem; /* Espaçamento entre os elementos dentro do item */
+    background: #fff; /* Fundo branco para o item de contato */
+    border: 2px solid #e9a2d7; /* Borda com a cor personalizada */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 1.5rem 2rem; /* Padding interno para espaçamento */
+    width: 50%; /* Define a largura dos itens de contato */
+    max-width: auto; /* Largura automática máxima */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito de hover nos itens de contato */
+.contato-item:hover {
+    transform: translateY(-5px); /* Move o item para cima quando o mouse passa sobre ele */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar destaque */
+}
+
+/* Estilo do ícone dentro de cada item de contato */
+.contato-item i {
+    font-size: 3rem; /* Define o tamanho do ícone */
+    color: #e9a2d7; /* Cor do ícone */
+}
+
+/* Estilo do texto dentro de cada item de contato */
+.contato-item p {
+    font-size: 1.6rem; /* Tamanho da fonte do parágrafo */
+    font-weight: 600; /* Peso da fonte para o parágrafo */
+    color: #4a4a4a; /* Cor do texto */
+}
+
+/* Estilo para os links dentro dos itens de contato */
+.contato-item a {
+    font-size: 1.6rem; /* Tamanho da fonte do link */
+    color: #333; /* Cor inicial do link */
+    text-decoration: none; /* Remove a linha debaixo do link */
+    font-weight: 500; /* Peso da fonte do link */
+    transition: color 0.3s ease; /* Transição suave para a cor do link */
+}
+
+/* Efeito de hover nos links dentro dos itens de contato */
+.contato-item a:hover {
+    color: #e9a2d7; /* Muda a cor do link no hover */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+
+    /* Ajusta o padding da seção em telas menores */
+    #contatos {
+        padding: 4rem 5%; /* Reduz o padding */
+    }
+
+    /* Ajusta o tamanho do título para telas pequenas */
+    #contatos h2 {
+        font-size: 3rem; /* Tamanho menor para o título */
+    }
+
+    /* Ajusta o layout da caixa de contatos em telas pequenas */
+    .contatos-box {
+        gap: 1.5rem; /* Reduz o espaçamento entre os itens */
+    }
+
+    /* Ajusta a direção dos itens de contato em telas pequenas */
+    .contato-item {
+        flex-direction: column; /* Organiza os itens em coluna */
+        text-align: center; /* Centraliza o texto dentro do item */
+    }
+}
