@@ -1,9 +1,8 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    scroll-behavior: smooth;
-    font-family: "Poppins";   
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos. */
+    padding: 0; /* Remove o preenchimento (padding) padrão de todos os elementos. */
+    box-sizing: border-box; /* Inclui o padding e a borda dentro das dimensões totais do elemento. */
+    text-decoration: none; /* Remove sublinhados de links por padrão. */
+    scroll-behavior: smooth; /* Habilita uma rolagem suave ao navegar por âncoras na página. */
+    font-family: "Poppins"; /* Define a fonte padrão para todos os elementos como "Poppins". */
 }
-
