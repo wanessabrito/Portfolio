@@ -3,13 +3,6 @@
     RU: 4916022 
     */
 
-/* Reset básico - Remove margens, espaçamentos e define o box-sizing de todos os elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Garante que a largura e altura incluam padding e border */
-}
-
 /* Definições para o html: tamanho da fonte é ajustado para facilitar unidades em rem e configuração de rolagem suave */
 html {
     font-size: 62.5%; /* 1rem = 10px, facilita a definição de tamanhos em rem */
